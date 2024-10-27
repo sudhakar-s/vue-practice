@@ -21,6 +21,11 @@ I used a constrained approach(e.g., color and size props) instead of a flexible 
 
 > Note: Pagination is not yet implemented, as I was occupied with personal commitments and could only spend time on this assignment on October 26th and 27th. I will also be busy this week (October 28th - November 3rd). If I were to implement pagination, I would create a new composable, e.g., usePaginate, which would accept data from the API and a limit per page, returning paginated data for the UI to render. This way, usePaginate can be easily removed once API pagination support is available.
 
+
+## Screenshots
+Refer screenshots folder
+
+
 ## Project Setup
 
 
@@ -47,9 +52,6 @@ In a separate terminal, start the Vue app:
 ```sh
 pnpm dev:ui
 ```
-
-## Screenshots
-Refer screenshots folder
 
 ## Searching the services endpoint
 
