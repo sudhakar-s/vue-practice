@@ -1,0 +1,11 @@
+/** use min-width eg:- @media screen and (min-width: $breakpoint-m) **/
+// Small Mobiles
+$breakpoint-xs: 320px;
+// Mobiles and Small Tablets
+$breakpoint-s: 480px;
+// Medium and Large Tablets
+$breakpoint-m: 768px;
+// Medium Desktop
+$breakpoint-l: 1024px;
+// HD Desktop
+$breakpoint-xl: 1200px;

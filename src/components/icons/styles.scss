@@ -1,0 +1,27 @@
+/** Better approach would be to get theme and apply directly to fill or path attr. Current approach sometimes breaks if fill and stroke used together for some icons eg: checkicon  */
+.current-color {
+  fill: var(--currentColor);
+  stroke: var(--currentColor);
+}
+
+.text-surface-white-normal {
+  fill: var(--surface-text-white-normal);
+  stroke: var(--surface-text-white-normal);
+}
+
+.text-surface-gray-subtle {
+  fill: var(--surface-text-gray-subtle);
+  stroke: var(--surface-text-gray-subtle);
+}
+
+.text-success-normal {
+  stroke: var(--success-text-normal);
+}
+
+.text-warn-normal {
+  stroke: var(--warn-text-normal);
+}
+
+.text-surface-skyblue-normal {
+  fill: var(--surface-text-skyblue-normal);
+}
