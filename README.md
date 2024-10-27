@@ -2,7 +2,7 @@
 1. Responsive
 2. API caching (vue-query)
 3. Vue Router integration
-4. Different UI State - No Data, Loading, Error, Background fetching, 404 etc.
+4. Different UI States - No Data, Loading, Error, Background fetching, 404 etc.
 5. Instant navigation to details page - (thanks to vue-query)
 6. Semantic HTML and accessibility(needs some improvement)
 7. Vue 3
@@ -17,7 +17,7 @@
 
 
 ## Reusbale Components
-Used constrained approach over flexibilty api eg:- color and size prop etc., as it prevents users from customising design system which would cause inconsistency. (Please note, inhertic attrs currently not disabled for now)
+I used a constrained approach(e.g., color and size props) instead of a flexible API to prevent users from customizing the design system components, which could lead to inconsistency. Please note that inherited attributes are not currently disabled.
 
 > Note: Pagination is not yet implemented, as I was occupied with personal commitments and could only spend time on this assignment on October 26th and 27th. I will also be busy this week (October 28th - November 3rd). If I were to implement pagination, I would create a new composable, e.g., usePaginate, which would accept data from the API and a limit per page, returning paginated data for the UI to render. This way, usePaginate can be easily removed once API pagination support is available.
 
