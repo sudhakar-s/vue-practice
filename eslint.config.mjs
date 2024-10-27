@@ -10,4 +10,7 @@ export default [
       '**/*.cy.{js,ts,jsx,tsx}',
     ],
   })),
+  {
+    rules: { 'vue/multi-word-component-names': 'warn' },
+  },
 ]

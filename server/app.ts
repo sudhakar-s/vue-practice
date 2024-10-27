@@ -2,6 +2,7 @@ import express from 'express'
 import type { Request, Response } from 'express'
 import bodyParser from 'body-parser'
 import response from './data'
+import { resolve } from 'path'
 
 const app = express()
 
@@ -42,8 +43,8 @@ app.route('/api/:entity').get(async (req: Request, res: Response) => {
       return false
     })
   }
-  await (new Promise(res => {
-    setTimeout(res, 1000)
+  await (new Promise(resolve => {
+    setTimeout(resolve, 1000)
   }))
   return res.status(200).send(filteredData)
 })
