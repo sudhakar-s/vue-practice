@@ -1,49 +1,121 @@
 <template>
-  <RouterLink class="text-decoration-none d-flex" :to="{ name: 'service-catalog-by-id', params: { id: catalog.id } }">
+  <RouterLink
+    class="text-decoration-none d-flex"
+    :to="{ name: 'service-catalog-by-id', params: { id: catalog.id } }"
+  >
     <Card class="card d-flex flex-direction-column">
       <!-- Header -->
       <div class="card__status d-flex align-center justify-space-between gap-4">
         <div class="d-flex align-center gap-3">
-          <component :is="publishStatusConfig.icon" :color="publishStatusConfig.iconColor" /><Text
-            color="surface.text.gray.subtle" size="xs">{{ publishStatusConfig.text }}</Text>
+          <component
+            :is="publishStatusConfig.icon"
+            :color="publishStatusConfig.iconColor"
+          /><Text
+            color="surface.text.gray.subtle"
+            size="xs"
+          >{{ publishStatusConfig.text }}</Text>
         </div>
-        <Chip v-if="totalVersions > 0" variant="pill">{{ totalVersions }} versions</Chip>
+        <Chip
+          v-if="totalVersions > 0"
+          variant="pill"
+        >
+          {{ totalVersions }} versions
+        </Chip>
       </div>
-      <Text class="mt-4" size="large" weight="semibold">{{ catalog.name }}</Text>
-      <Text class="mt-4" size="small" color="surface.text.gray.intense">{{ catalog.description }}</Text>
+      <Text
+        class="mt-4"
+        size="large"
+        weight="semibold"
+      >
+        {{ catalog.name }}
+      </Text>
+      <Text
+        class="mt-4"
+        color="surface.text.gray.intense"
+        size="small"
+      >
+        {{ catalog.description }}
+      </Text>
       <!-- Card Footer -->
       <div class="mt-8 d-flex justify-space-between gap-4 flex-wrap align-end">
         <!-- Metrics -->
         <div v-if="mertrics !== null">
           <div class="d-flex align-center gap-4"><span class="green-dot" />
-            <Text size="xs" weight="semibold">{{ mertrics.latency }}ms <Text weight="semibold" size="xs"
-                color="surface.text.gray.intense" as="span">latency</Text></Text>
+            <Text
+              size="xs"
+              weight="semibold"
+            >{{ mertrics.latency }}ms <Text
+              as="span"
+              color="surface.text.gray.intense"
+              size="xs"
+              weight="semibold"
+            >latency</Text></Text>
           </div>
           <div class="d-flex align-center gap-4 mt-2"><span class="green-dot" />
-            <Text size="xs" weight="semibold">{{ mertrics.uptime }}% <Text weight="semibold" size="xs"
-                color="surface.text.gray.intense" as="span">uptime</Text></Text>
+            <Text
+              size="xs"
+              weight="semibold"
+            >{{ mertrics.uptime }}% <Text
+              as="span"
+              color="surface.text.gray.intense"
+              size="xs"
+              weight="semibold"
+            >uptime</Text></Text>
           </div>
           <div class="d-flex align-center">
             <div class="d-flex align-center gap-4 mt-2"><span class="green-dot" />
-              <Text size="xs" weight="semibold">{{ mertrics.requests }} <Text weight="semibold" size="xs"
-                  color="surface.text.gray.intense" as="span">requests</Text></Text>
+              <Text
+                size="xs"
+                weight="semibold"
+              >{{ mertrics.requests }} <Text
+                as="span"
+                color="surface.text.gray.intense"
+                size="xs"
+                weight="semibold"
+              >requests</Text></Text>
             </div>
             <span class="grey-dot ml-3 mr-3 mt-2" />
             <div class="d-flex align-center gap-4 mt-2">
-              <Text size="xs" weight="semibold">{{ mertrics.errors }}% <Text weight="semibold" size="xs"
-                  color="surface.text.gray.intense" as="span">errors</Text></Text>
+              <Text
+                size="xs"
+                weight="semibold"
+              >{{ mertrics.errors }}% <Text
+                as="span"
+                color="surface.text.gray.intense"
+                size="xs"
+                weight="semibold"
+              >errors</Text></Text>
             </div>
           </div>
         </div>
-        <AvatarGroup v-if="avatars.length > 0" :max="2" class="ml-auto" size="large">
-          <Avatar v-for="avatar in avatars" :key="avatar.id" color="neutral" :alt="avatar.name" :name="avatar.name"
-            :img-src="avatar.avatar" />
+        <AvatarGroup
+          v-if="avatars.length > 0"
+          class="ml-auto"
+          :max="2"
+          size="large"
+        >
+          <Avatar
+            v-for="avatar in avatars"
+            :key="avatar.id"
+            :alt="avatar.name"
+            color="neutral"
+            :img-src="avatar.avatar"
+            :name="avatar.name"
+          />
         </AvatarGroup>
       </div>
-      <div v-if="publishStatusConfig.footerText" class="mt-auto d-flex align-center"><span
-          class="grey-dot grey-dot--large mr-3" /><Text weight="semibold" size="xs" color="surface.text.gray.intense">{{
-    publishStatusConfig.footerText
-          }}</Text></div>
+      <div
+        v-if="publishStatusConfig.footerText"
+        class="mt-auto d-flex align-center"
+      ><span
+        class="grey-dot grey-dot--large mr-3"
+      /><Text
+        color="surface.text.gray.intense"
+        size="xs"
+        weight="semibold"
+      >{{
+        publishStatusConfig.footerText
+      }}</Text></div>
     </Card>
   </RouterLink>
 </template>
@@ -60,7 +132,7 @@ import CloseIcon from '@/components/icons/CloseIcon.vue'
 import Avatar from '@/components/Avatar/Avatar.vue'
 import AvatarGroup from '@/components/Avatar/AvatarGroup.vue'
 import { type ServiceCatalog, type Developer } from '@/composables/useServiceCatalogs'
-import { type Colors } from '@/components/icons/useIconProps';
+import { type Colors } from '@/components/icons/useIconProps'
 
 const { catalog } = defineProps<{
   catalog: ServiceCatalog;
@@ -71,7 +143,7 @@ const publishStatusConfig = computed((): { icon: typeof CheckIcon, iconColor: Co
     return {
       icon: CheckIcon,
       iconColor: 'success.text.normal',
-      text: 'Published to portal'
+      text: 'Published to portal',
     }
   }
   if (!catalog.configured) {
@@ -79,13 +151,13 @@ const publishStatusConfig = computed((): { icon: typeof CheckIcon, iconColor: Co
       icon: ProgressIcon,
       iconColor: 'warn.text.normal',
       text: 'In progress',
-      footerText: 'Not configured with runtime yet'
+      footerText: 'Not configured with runtime yet',
     }
   }
   return {
     icon: CloseIcon,
     iconColor: 'surface.text.gray.subtle',
-    text: 'Unpublished'
+    text: 'Unpublished',
   }
 })
 

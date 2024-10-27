@@ -1,19 +1,34 @@
 <template>
   <div>
     <div class="root d-flex align-center">
-      <component v-if="leadingIcon" :is="leadingIcon" color="surface.text.gray.subtle" class="root__leadicon flex-shrink-0 mr-2" />
-      <input class="root__input" v-model="model" :aria-label="accessibilityLabel" :placeholder />
+      <component
+        :is="leadingIcon"
+        v-if="leadingIcon"
+        class="root__leadicon flex-shrink-0 mr-2"
+        color="surface.text.gray.subtle"
+      />
+      <input
+        v-model="model"
+        :aria-label="accessibilityLabel"
+        class="root__input"
+        :placeholder
+      >
       <!-- TODO: icon-button  -->
-      <button aria-label="Clear input value" v-if="showClearButton && model"  @click="handleClear" class="root__clear">
+      <button
+        v-if="showClearButton && model"
+        aria-label="Clear input value"
+        class="root__clear"
+        @click="handleClear"
+      >
         <CloseIcon color="surface.text.gray.subtle" />
       </button>
     </div>
-</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import UsersIcon from '@/components/icons/UsersIcon.vue';
-import CloseIcon from '@/components/icons/CloseIcon.vue';
+import type UsersIcon from '@/components/icons/UsersIcon.vue'
+import CloseIcon from '@/components/icons/CloseIcon.vue'
 
 const { placeholder, name, accessibilityLabel } = defineProps<{
   placeholder?: string;
@@ -25,13 +40,13 @@ const { placeholder, name, accessibilityLabel } = defineProps<{
 
 const emit = defineEmits<{
   clear: []
-}>();
+}>()
 
-const model = defineModel();
+const model = defineModel()
 
 const handleClear = () => {
-  model.value = '';
-  emit('clear');
+  model.value = ''
+  emit('clear')
 }
 </script>
 

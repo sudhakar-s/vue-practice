@@ -1,6 +1,16 @@
 <template>
-  <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" :width :height xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 18L8 12L14 6L15.4 7.4L10.8 12L15.4 16.6L14 18Z" :class="colorClass"></path>
+  <svg
+    aria-hidden="true"
+    fill="none"
+    :height
+    viewBox="0 0 24 24"
+    :width
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      :class="colorClass"
+      d="M14 18L8 12L14 6L15.4 7.4L10.8 12L15.4 16.6L14 18Z"
+    />
   </svg>
 </template>
 

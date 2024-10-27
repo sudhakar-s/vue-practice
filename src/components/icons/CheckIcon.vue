@@ -1,6 +1,18 @@
 <template>
-  <svg aria-hidden="true" :width :height xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path :class="colorClass" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="m14 7-6 6-3-3" />
+  <svg
+    aria-hidden="true"
+    fill="none"
+    :height
+    :width
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      :class="colorClass"
+      d="m14 7-6 6-3-3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2.25"
+    />
   </svg>
 </template>
 

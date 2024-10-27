@@ -1,9 +1,12 @@
 <template>
-  <div class="skeleton" :style="style" />
+  <div
+    class="skeleton"
+    :style="style"
+  />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 const { width = '100px', height = '25px', marginTop } = defineProps<{
   width?: string;
@@ -19,7 +22,7 @@ const { width = '100px', height = '25px', marginTop } = defineProps<{
   minHeight?: string;
   maxHeight?: string;
   flex?: string;
-}>();
+}>()
 
 const style = computed(() => {
   return {
@@ -30,7 +33,7 @@ const style = computed(() => {
 })
 </script>
 
-<style lang="scss" scoped>  
+<style lang="scss" scoped>
 @keyframes loading {
   100% {
     transform: translate(100%);

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { provide, toRef, h, defineComponent, type PropType } from 'vue'
 import Avatar, { type Size, SIZE_KEY } from './Avatar.vue'
-import { computed } from 'vue';
-import { cloneVNode } from 'vue';
+import { computed } from 'vue'
+import { cloneVNode } from 'vue'
 
 // Ref: https://github.com/nuxt/ui/blob/dev/src/runtime/components/elements/AvatarGroup.ts
 function getSlotsChildren(slots: any) {
@@ -30,11 +30,11 @@ export default defineComponent({
   props: {
     size: {
       type: String as PropType<Size>,
-      default: 'medium'
+      default: 'medium',
     },
     max: {
       type: Number,
-    }
+    },
   },
   setup(props, { slots }) {
     provide(SIZE_KEY, toRef(() => props.size))
@@ -52,8 +52,8 @@ export default defineComponent({
           color: 'neutral',
           text: `+ ${source.length - props.max}`,
           style: {
-            zIndex: index
-          }
+            zIndex: index,
+          },
         })
       }
 
@@ -61,7 +61,7 @@ export default defineComponent({
     }).filter(Boolean).reverse())
 
     return () => h('div', { class: 'a-group d-flex' }, nodes.value)
-  }
+  },
 })
 </script>
 

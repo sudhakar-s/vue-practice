@@ -1,7 +1,17 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width :height fill="none">
-    <path :class="colorClass" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-      d="M5 10a5 5 0 1 0 5-5" />
+  <svg
+    fill="none"
+    :height
+    :width
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      :class="colorClass"
+      d="M5 10a5 5 0 1 0 5-5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+    />
   </svg>
 </template>
 

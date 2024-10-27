@@ -1,23 +1,46 @@
 <template>
-  <div class="loader" aria-live="polite" aria-label="Loading..." role="alert">
-    <template v-for="(_, idx) in loadingCards" :key="idx">
-      <Card  class="loader__card d-flex flex-direction-column">
-        <SkeletionLoader width="26%" height="15px" />
-        <SkeletionLoader width="80%" height="18px" margin-top="24px" />
-        <SkeletionLoader width="12%" height="18px" margin-top="auto" />
-        <SkeletionLoader width="8%" height="18px" margin-top="12px" />
+  <div
+    aria-label="Loading..."
+    aria-live="polite"
+    class="loader"
+    role="alert"
+  >
+    <template
+      v-for="(_, idx) in loadingCards"
+      :key="idx"
+    >
+      <Card class="loader__card d-flex flex-direction-column">
+        <SkeletionLoader
+          height="15px"
+          width="26%"
+        />
+        <SkeletionLoader
+          height="18px"
+          margin-top="24px"
+          width="80%"
+        />
+        <SkeletionLoader
+          height="18px"
+          margin-top="auto"
+          width="12%"
+        />
+        <SkeletionLoader
+          height="18px"
+          margin-top="12px"
+          width="8%"
+        />
       </Card>
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import SkeletionLoader from '@/components/SkeletionLoader.vue';
-import Card from '@/components/Card.vue';
+import SkeletionLoader from '@/components/SkeletionLoader.vue'
+import Card from '@/components/Card.vue'
 
 const { count = 9 } = defineProps<{ count?: number }>()
 
-const loadingCards = Array.from({ length: count });
+const loadingCards = Array.from({ length: count })
 </script>
 
 <style lang="scss" scoped>

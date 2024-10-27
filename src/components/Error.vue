@@ -1,9 +1,20 @@
 <template>
   <div class="error text-center d-flex justify-center">
     <Card class="error__card d-flex flex-direction-column align-center justify-center">
-      <img :src="ErrorImg" class="error__image" aria-hidden="true" />
-      <Text class="mt-6">Oops! Something went wrong. Please try again.</Text>
-      <Button class="mt-4" @click="handleRetry">Retry</Button>
+      <img
+        aria-hidden="true"
+        class="error__image"
+        :src="ErrorImg"
+      >
+      <Text class="mt-6">
+        Oops! Something went wrong. Please try again.
+      </Text>
+      <Button
+        class="mt-4"
+        @click="handleRetry"
+      >
+        Retry
+      </Button>
     </Card>
   </div>
 </template>

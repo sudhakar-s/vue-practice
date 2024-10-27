@@ -1,8 +1,14 @@
 <template>
   <div>
     <button :class="['button gap-3', rootClass]">
-      <component v-if="!!icon" :is="icon" />
-      <Text :weight v-bind="textProps">
+      <component
+        :is="icon"
+        v-if="!!icon"
+      />
+      <Text
+        :weight
+        v-bind="textProps"
+      >
         <slot />
       </Text>
     </button>
@@ -12,7 +18,7 @@
 <script lang="ts">
 const COLORS_CLASS = {
   primary: 'button--primary',
-} as const;
+} as const
 
 const TEXT_COLOR = {
   primary: 'surface.text.white.normal',
@@ -20,21 +26,21 @@ const TEXT_COLOR = {
 </script>
 
 <script setup lang="ts">
-import { defineProps, computed } from 'vue';
-import UsersIcon from '@/components/icons/UsersIcon.vue';
+import { defineProps, computed } from 'vue'
+import type UsersIcon from '@/components/icons/UsersIcon.vue'
 import Text from '@/components/Text.vue'
-import type { Weight } from '@/utils/fonts';
+import type { Weight } from '@/utils/fonts'
 
 const { icon, weight, color = 'primary' } = defineProps<{
   icon?: typeof UsersIcon;
   weight?: Weight
   color?: keyof typeof COLORS_CLASS;
-}>();
+}>()
 
 const rootClass = computed(() => `${COLORS_CLASS[color]}`)
 
 const textProps = computed(() => ({
-  color: TEXT_COLOR[color]
+  color: TEXT_COLOR[color],
 }))
 
 </script>

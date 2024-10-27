@@ -1,5 +1,8 @@
 <template>
-  <component :is="as" :class="['heading', computedClass]">
+  <component
+    :is="as"
+    :class="['heading', computedClass]"
+  >
     <slot />
   </component>
 </template>
@@ -7,19 +10,19 @@
 <script lang="ts">
 const COLORS_CLASS = {
   currentColor: 'current-color',
-  "surface.text.gray.normal": "text-surface-gray-normal"
-} as const;
+  'surface.text.gray.normal': 'text-surface-gray-normal',
+} as const
 
 const SIZE_CLASS = {
-  small: "text-sm",
-  medium: "text-md",
-  large: "text-lg"
-} as const;
+  small: 'text-sm',
+  medium: 'text-md',
+  large: 'text-lg',
+} as const
 </script>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { type Weight, getWeightClass } from "@/utils/fonts";
+import { computed } from 'vue'
+import { type Weight, getWeightClass } from '@/utils/fonts'
 
 const { as = 'h1', weight = 'normal', size = 'small', color = 'surface.text.gray.normal' } = defineProps<{
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

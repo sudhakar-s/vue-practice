@@ -1,5 +1,8 @@
 <template>
-  <component :is="as" :class="['text', computedClass]">
+  <component
+    :is="as"
+    :class="['text', computedClass]"
+  >
     <slot />
   </component>
 </template>
@@ -7,25 +10,25 @@
 <script lang="ts">
 const COLORS_CLASS = {
   currentColor: 'current-color',
-  "surface.text.gray.normal": "text-surface-gray-normal",
-  "surface.text.gray.subtle": "text-surface-gray-subtle",
+  'surface.text.gray.normal': 'text-surface-gray-normal',
+  'surface.text.gray.subtle': 'text-surface-gray-subtle',
   'surface.text.gray.intense': 'text-surface-gray-intense',
   'surface.text.blue.normal': 'text-surface-blue-normal',
-  "surface.text.skyblue.normal": "text-surface-skyblue-normal",
+  'surface.text.skyblue.normal': 'text-surface-skyblue-normal',
   'surface.text.white.normal': 'text-surface-white-normal',
-} as const;
+} as const
 
 const SIZE_CLASS = {
-  xs: "text-xs",
-  small: "text-sm",
-  medium: "text-md",
-  large: "text-lg"
-} as const;
+  xs: 'text-xs',
+  small: 'text-sm',
+  medium: 'text-md',
+  large: 'text-lg',
+} as const
 </script>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { type Weight, getWeightClass } from "@/utils/fonts";
+import { computed } from 'vue'
+import { type Weight, getWeightClass } from '@/utils/fonts'
 
 const { as = 'p', weight = 'normal', size = 'medium', color = 'surface.text.gray.normal' } = defineProps<{
   as?: 'p' | 'span' | 'label';

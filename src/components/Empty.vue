@@ -1,8 +1,14 @@
 <template>
   <div class="empty text-center d-flex justify-center">
     <Card class="empty__card d-flex flex-direction-column align-center justify-center">
-      <img :src="EmptyImg" class="empty__image" aria-hidden="true" />
-      <Text class="mt-6">No data available. Start by creating a new entry or adjust your search criteria.</Text>
+      <img
+        aria-hidden="true"
+        class="empty__image"
+        :src="EmptyImg"
+      >
+      <Text class="mt-6">
+        No data available. Start by creating a new entry or adjust your search criteria.
+      </Text>
     </Card>
   </div>
 </template>

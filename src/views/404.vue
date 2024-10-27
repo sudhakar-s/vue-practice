@@ -1,10 +1,21 @@
 <template>
   <div class="not-found text-center d-flex justify-center">
     <Card class="not-found__card d-flex flex-direction-column align-center justify-center">
-      <img :src="NotFoundImg" class="not-found__image" aria-hidden="true" />
-      <Text class="mt-6">Congratulations, you've found the 404 page!</Text>
-      <RouterLink class="text-decoration-none" :to="{ name: 'home' }">
-        <Button class="mt-4">Go To Home</Button>
+      <img
+        aria-hidden="true"
+        class="not-found__image"
+        :src="NotFoundImg"
+      >
+      <Text class="mt-6">
+        Congratulations, you've found the 404 page!
+      </Text>
+      <RouterLink
+        class="text-decoration-none"
+        :to="{ name: 'home' }"
+      >
+        <Button class="mt-4">
+          Go To Home
+        </Button>
       </RouterLink>
     </Card>
   </div>

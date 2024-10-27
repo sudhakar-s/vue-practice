@@ -1,21 +1,41 @@
 <template>
   <div :class="['avatar d-flex align-center justify-center', rootClass]">
-    <img v-if="!!imgSrc" :src="imgSrc" :alt class="avatar__img" />
-    <div v-else-if="!!icon" class="avatar__icon">
+    <img
+      v-if="!!imgSrc"
+      :alt
+      class="avatar__img"
+      :src="imgSrc"
+    >
+    <div
+      v-else-if="!!icon"
+      class="avatar__icon"
+    >
       <!-- Note: margin-right: -2px is a temp hack, as there is an issue with exported UserIcon -->
-      <component :is="icon" :size="iconSize" style="margin-right: -2px;" />
+      <component
+        :is="icon"
+        :size="iconSize"
+        style="margin-right: -2px;"
+      />
     </div>
-    <div v-else class="avatar__text">
-      <Text v-bind="textProps" weight="semibold">{{ computedText }}</Text>
+    <div
+      v-else
+      class="avatar__text"
+    >
+      <Text
+        v-bind="textProps"
+        weight="semibold"
+      >
+        {{ computedText }}
+      </Text>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import type { InjectionKey, Ref  } from 'vue';
-import Text from '@/components/Text.vue';
+import type { InjectionKey, Ref } from 'vue'
+import Text from '@/components/Text.vue'
 
-export const SIZE_KEY = Symbol() as InjectionKey<Ref<Size>>;
+export const SIZE_KEY = Symbol() as InjectionKey<Ref<Size>>
 const ICON_SIZE = {
   xs: 'small',
   medium: 'small',
@@ -43,15 +63,15 @@ const TEXT_COLOR = {
 const COLOR_CLASS = {
   neutral: 'avatar--neutral',
   information: 'avatar--information',
-} as const;
+} as const
 
-export type Size = keyof typeof SIZE_CLASS;
+export type Size = keyof typeof SIZE_CLASS
 
 </script>
 
 <script setup lang="ts">
-import  { computed, inject } from 'vue';
-import GearIcon from '@/components/icons/UsersIcon.vue';
+import { computed, inject } from 'vue'
+import type GearIcon from '@/components/icons/UsersIcon.vue'
 
 const { icon, name, text, imgSrc, alt, size = 'medium', color = 'information' } = defineProps<{
   icon?: typeof GearIcon;
@@ -61,14 +81,14 @@ const { icon, name, text, imgSrc, alt, size = 'medium', color = 'information' } 
   alt?: string;
   size?: keyof typeof SIZE_CLASS;
   color?: keyof typeof COLOR_CLASS;
-}>();
+}>()
 
 const computedText = computed(() => {
   if (name) {
-    const splitName = name.toUpperCase().split(' ');
-    return splitName.length > 1 ? splitName[0][0] + splitName[1][0] : splitName[0][0];
+    const splitName = name.toUpperCase().split(' ')
+    return splitName.length > 1 ? splitName[0][0] + splitName[1][0] : splitName[0][0]
   }
-  return text ? text.slice(0, 4) : '';
+  return text ? text.slice(0, 4) : ''
 })
 
 const injectedSizeRef = inject(SIZE_KEY, null)

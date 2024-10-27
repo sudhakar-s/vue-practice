@@ -1,6 +1,10 @@
 <template>
   <div class="progress">
-    <div role="progressbar" :aria-label="accessibilityLabel" class="progress__bar overflow-hidden" />
+    <div
+      :aria-label="accessibilityLabel"
+      class="progress__bar overflow-hidden"
+      role="progressbar"
+    />
   </div>
 </template>
 

@@ -1,72 +1,27 @@
-# Welcome
+# Features
+1. Responsive
+2. API caching (vue-query)
+3. Vue Router integration
+4. Different UI State - No Data, Loading, Error, Background fetching, 404 etc.
+5. Instant navigation to details page - (thanks to vue-query)
+6. Semantic HTML and accessibility(needs some improvement)
+7. Vue 3 - setup
+8. Reusable Component
+9. TS
 
-Please take the time to read through all of the sections below; we want you to do great! :rocket:
+**Go to have**
+1. Animations - View Transition api(progressive enhancement)
+2. Pagination - Please check below note
+3. UT's - Integration testing from users point of view
 
-Feel free to reach out to your recruiting contact with any questions or concerns.
 
-## Goal
+## Reusbale Components
+Used constrained approach over flexibilty api eg:- color and size prop etc., as it prevents users from customising design system which would cause inconsistency. (Please note, inhertic attrs currently not disabled for now)
 
-Modify the provided Vue 3 app to match [this mock](https://www.figma.com/file/swzJVL624G434CVdWi3FLv/Core-UI-Team-Project) as closely as possible while utilizing best-practices to improve the codebase and implement the functional requirements outlined below.
-
-- The provided exercise files are a starting point and they have room for improvement; feel free to modify
-- Don't treat the mock as gospel -- if you see things that don't make sense, ask questions or implement what you think is right
-- In the exercise you are utilizing a local API; however, code your submission as if you are using a production API, accounting for typical issues that can occur
-
-### Links
-
-- Figma Mock: <https://www.figma.com/file/swzJVL624G434CVdWi3FLv/Core-UI-Team-Project>
-- Acceptance criterias: <https://docs.google.com/document/d/1AIXTtrEMZBnfoLYXDlBYiEB-BTk7XNt2QlY7jWYdPv0/edit?tab=t.0#heading=h.8hapmwf98sj>
-
-## Functional Requirements
-
-- [Vue 3](https://vuejs.org/) and TypeScript
-- User should be able to view the name, a brief description, versions available, and other info shown in the mock for services
-- User should be able to search for services ([See search endpoint details below](#searching-the-services-endpoint))
-- User should be able to click on a service to view more details
-- User should be able to paginate through services (client-side implementation)
-- The create Service Package button doesn't have to be operable -- interacting with this elements could do nothing, could be fully implemented (stretch goal), or something in between
-- Please update the `README` in the project with a section to describe your design considerations, assumptions, and trade-offs made during this exercise. Also feel free to include any notes about your submission
-
-## Additional Considerations (if applicable)
-
-- The UI should be responsive and look great at different browser viewport sizes
-- Pixel-perfect implementation
-- Routing and views (e.g. navigating to a given service from its card)
-- State management with [Pinia](https://pinia.vuejs.org/)
-- [Component Tests and/or Unit Tests](#run-component-and-unit-tests-with-vitest-and-optionally-vue-test-utils)
-- Other items covered in your Panel 1 interview
-
-## Evaluation
-
-We will review your code for quality and your ability to talk through it, how you approach the UI, and what tradeoffs you make. Specifically we'll be looking at the following:
-
-- How closely your implementation matches the design along with the other [Functional Requirements](#functional-requirements)
-- Code quality, including appropriate componentization and modularity
-- TypeScript usage
-- Coding (and Vue) best-practices
-- The project should pass type checking and build successfully
-- How you dedicate the allotted time to focus on your strengths
-- Test coverage, if applicable
-
-## How to submit the project
-
-You have up to a week to complete the exercise, but we don't expect you to spend more than a few hours on it.
-
-When it's ready, please send your recruiter a link to the source code in a GitHub repository (no Pull Requests).
-
----
+> Note: Pagination is not yet implemented, as I was occupied with personal commitments and could only spend time on this assignment on October 26th and 27th. I will also be busy this week (October 28th - November 3rd). If I were to implement pagination, I would create a new composable, e.g., usePaginate, which would accept data from the API and a limit per page, returning paginated data for the UI to render. This way, usePaginate can be easily removed once API pagination support is available.
 
 ## Project Setup
 
-### Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
-
-### Clone the repository
-
-```sh
-git clone git@github.com:Kong/konnect-team-interview-frontend-exercise.git
-```
 
 ### pnpm
 
@@ -91,6 +46,9 @@ In a separate terminal, start the Vue app:
 ```sh
 pnpm dev:ui
 ```
+
+## Screenshots
+Refer screenshots folder
 
 ## Searching the services endpoint
 

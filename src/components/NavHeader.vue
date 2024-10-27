@@ -2,22 +2,50 @@
   <header class="header">
     <!-- TODO: SKIP Link -->
     <nav class="header__nav align-center">
-      <Link aria-label="Kong home page" class="header__nav-logo flex-shrink-0" :to="{ name: 'home' }">
-       <img :src="Logo" width="161" height="26" alt="Kong Connect" />
+      <Link
+        aria-label="Kong home page"
+        class="header__nav-logo flex-shrink-0"
+        :to="{ name: 'home' }"
+      >
+        <img
+          alt="Kong Connect"
+          height="26"
+          :src="Logo"
+          width="161"
+        >
       </Link>
 
       <div class="header__nav-items align-self-stretch overflow-x-auto">
         <div class="d-flex align-center gap-8 height-full">
-          <Link class="flex-shrink-0" :to="{ path: '/oraganization' }" :icon="UsersIcon" weight="semibold">
+          <Link
+            class="flex-shrink-0"
+            :icon="UsersIcon"
+            :to="{ path: '/oraganization' }"
+            weight="semibold"
+          >
             Organization
           </Link>
-          <Link class="flex-shrink-0" :to="{ path: '/settings' }" :icon="GearIcon" weight="semibold">
+          <Link
+            class="flex-shrink-0"
+            :icon="GearIcon"
+            :to="{ path: '/settings' }"
+            weight="semibold"
+          >
             Settings
           </Link>
           <!-- TODO: Improve below section accessibility -->
           <div class="header__nav-profile flex-shrink-0 overflow-hidden align-self-stretch d-flex align-center gap-5">
-            <Avatar size="medium" :icon="UserIcon" class="flex-shrink-0" />
-            <Link aria-label="Profile page" class="flex-shrink-0" :to="{ path: '/profile' }" weight="semibold">
+            <Avatar
+              class="flex-shrink-0"
+              :icon="UserIcon"
+              size="medium"
+            />
+            <Link
+              aria-label="Profile page"
+              class="flex-shrink-0"
+              :to="{ path: '/profile' }"
+              weight="semibold"
+            >
               Sudhakar Selvarasu
             </Link>
           </div>
