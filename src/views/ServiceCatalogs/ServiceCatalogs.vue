@@ -101,12 +101,12 @@ const handleRetry = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/global/breakpoints.scss';
+@import '@/assets/css/global/breakpoints';
 
 
 .catalogs {
-  margin-top: var(--spacing-8);
   margin: var(--spacing-8) var(--spacing-5);
+  margin-top: var(--spacing-8);
 
   &__search-wrapper {
     flex-direction: column-reverse;
@@ -114,8 +114,8 @@ const handleRetry = () => {
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing-9);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 

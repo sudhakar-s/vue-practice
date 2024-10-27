@@ -30,18 +30,18 @@ import NotFoundImg from '@/assets/images/404.svg'
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/global/breakpoints.scss';
+@import '@/assets/css/global/breakpoints';
 .not-found {
   margin-top: 56px;
 
   &__card {
-    padding: var(--spacing-7);
     max-width: 450px;
+    padding: var(--spacing-7);
   }
 
   &__image {
-    width: 80px;
     height: 80px;
+    width: 80px;
   }
 }
 @media screen and (min-width: $breakpoint-m) {

@@ -21,18 +21,18 @@ import EmptyImg from '@/assets/images/empty.svg'
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/global/breakpoints.scss';
+@import '@/assets/css/global/breakpoints';
 .empty {
   margin-top: 56px;
 
   &__card {
-    padding: var(--spacing-7);
     max-width: 450px;
+    padding: var(--spacing-7);
   }
 
   &__image {
-    width: 50px;
     height: 50px;
+    width: 50px;
   }
 }
 @media screen and (min-width: $breakpoint-m) {

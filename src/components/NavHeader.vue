@@ -65,20 +65,20 @@ import Avatar from '@/components/Avatar/Avatar.vue'
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/global/breakpoints.scss';
+@import '@/assets/css/global/breakpoints';
 
 .header {
+  background: linear-gradient(180deg, #09224F 0%, #073382 100%);
   min-height: 70px;
+  padding: var(--spacing-5) var(--spacing-4) var(--spacing-0);
   position: sticky;
   top: 0;
   z-index: 10;
-  background: linear-gradient(180deg, #09224F 0%, #073382 100%);
-  padding: var(--spacing-5) var(--spacing-4) var(--spacing-0);
 
   &__nav {
-    min-height: inherit;
     display: flex;
     flex-direction: column;
+    min-height: inherit;
   }
 
   &__nav-logo {
@@ -90,9 +90,9 @@ import Avatar from '@/components/Avatar/Avatar.vue'
   }
 
   &__nav-items {
-    padding: var(--spacing-6) var(--spacing-0);
     margin: auto;
     max-width: 100%;
+    padding: var(--spacing-6) var(--spacing-0);
   }
 }
 
@@ -115,8 +115,8 @@ import Avatar from '@/components/Avatar/Avatar.vue'
     }
 
     &__nav-items {
-      padding: var(--spacing-0);
       margin: 0;
+      padding: var(--spacing-0);
     }
   }
 }

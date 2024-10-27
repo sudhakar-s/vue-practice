@@ -214,21 +214,21 @@ const avatars = computed((): Developer[] => {
 }
 
 .green-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
   background-color: var(--success-bg-light);
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
 }
 
 .grey-dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
   background-color: var(--surface-text-gray-intense);
+  border-radius: 50%;
+  height: 3px;
+  width: 3px;
 
   &--large {
-    width: 6px;
     height: 6px;
+    width: 6px;
   }
 }
 </style>

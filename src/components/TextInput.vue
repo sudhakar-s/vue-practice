@@ -54,20 +54,20 @@ const handleClear = () => {
 
 <style lang="scss" scoped>
 .root {
-  min-width: 220px;
-  min-height: 44px;
+  background-color: var(--surface-bg-gray-normal);
   border: 1px solid hsla(240, 12%, 92%, 1);
   border-radius: 4px;
-  background-color: var(--surface-bg-gray-normal);
-  position: relative;
-  padding-right: var(--spacing-8);
+  min-height: 44px;
+  min-width: 220px;
   padding-left: var(--spacing-4);
+  padding-right: var(--spacing-8);
+  position: relative;
   &__input {
-    min-height: inherit;
     border: none;
     color: var(--surface-text-gray-normal);
     font-size: var(--font-size-200);
     line-height: var(--line-height-200);
+    min-height: inherit;
     &::placeholder {
       color: var(--surface-bg-gray-disabled);
     }
@@ -78,11 +78,11 @@ const handleClear = () => {
   }
 
   &__clear {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     position: absolute;
     right: var(--spacing-1);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
     &:hover {
       opacity: 0.8;
     }

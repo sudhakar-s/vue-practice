@@ -15,17 +15,17 @@ const { accessibilityLabel } = defineProps<{ accessibilityLabel: string }>()
 <style lang="scss" scoped>
 .progress {
   &__bar {
+    background-color: var(--surface-bg-primary-subtle);
     height: 4px;
     position: relative;
-    background-color: var(--surface-bg-primary-subtle);
 
     &::after {
-      content: '';
+      animation: 900ms linear 0s infinite normal none running progress;
       background-color: var(--surface-bg-primary);
+      content: '';
+      height: 100%;
       position: absolute;
       width: 5%;
-      height: 100%;
-      animation: 900ms linear 0s infinite normal none running progress;
     }
   }
 }

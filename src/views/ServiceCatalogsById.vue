@@ -165,8 +165,8 @@ const { isPending, isSuccess, isError, data, refetch, isFetching } = useServiceC
 
 <style lang="scss" scoped>
 .catalog-id {
-  margin-top: var(--spacing-8);
   margin: var(--spacing-8) var(--spacing-5);
+  margin-top: var(--spacing-8);
 
   &__content {
     max-width: 850px;
@@ -184,8 +184,8 @@ const { isPending, isSuccess, isError, data, refetch, isFetching } = useServiceC
 
   &__version {
     border-collapse: collapse;
-    width: 100%;
     min-width: 700px;
+    width: 100%;
 
     /* Note: element + attribute selectors are not very performant */
     tr:not(:last-child) {
@@ -217,10 +217,10 @@ const { isPending, isSuccess, isError, data, refetch, isFetching } = useServiceC
     }
 
     .text-elipsis {
-      white-space: nowrap;
       max-width: 100px;
-      text-overflow: ellipsis;
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

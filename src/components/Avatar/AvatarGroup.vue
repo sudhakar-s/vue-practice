@@ -74,8 +74,8 @@ export default defineComponent({
     box-shadow: 0px 0px 0px 4px var(--surface-bg-gray-normal);
   }
   & > :deep(.avatar--grp):not(:last-child) {
-    position: relative;
     margin-right: -12px;
+    position: relative;
   }
 }
 </style>

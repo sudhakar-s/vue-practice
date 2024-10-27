@@ -113,16 +113,16 @@ const textProps = computed(() => {
   border-radius: 50%;
   overflow: hidden;
   &--xs {
-    width: 20px;
     height: 20px;
+    width: 20px;
   }
   &--medium {
-    width: 30px;
     height: 30px;
+    width: 30px;
   }
   &--large {
-    width: 36px;
     height: 36px;
+    width: 36px;
   }
   &--information {
     background-color: var(--surface-bg-skyblue-normal);
@@ -131,10 +131,10 @@ const textProps = computed(() => {
     background-color: hsla(240, 29%, 96%, 1);
   }
   &__img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    width: 100%;
   }
 }
 </style>

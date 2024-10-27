@@ -47,14 +47,14 @@ const textProps = computed(() => ({
 
 <style lang="scss" scoped>
 .button {
-  display: flex;
   align-items: center;
-  padding: 8px var(--spacing-6);
-  min-height: 44px;
   border: none;
   border-radius: 999px;
-  transition: opacity 0.2s;
   cursor: pointer;
+  display: flex;
+  min-height: 44px;
+  padding: 8px var(--spacing-6);
+  transition: opacity 0.2s;
 
   &--primary {
     background-color: var(--surface-bg-primary);

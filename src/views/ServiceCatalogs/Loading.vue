@@ -44,12 +44,12 @@ const loadingCards = Array.from({ length: count })
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/global/breakpoints.scss';
+@import '@/assets/css/global/breakpoints';
 .loader {
   display: grid;
+  gap: var(--spacing-9);
   /* Note: This mimics the actual content layout. To avoid duplication, we could use subgrid(browser-support*) */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--spacing-9);
   &__card {
     min-height: 230px;
     padding: var(--spacing-7);
