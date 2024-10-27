@@ -14,6 +14,7 @@
 2. Pagination - Please refer to the below note
 3. UT's - Integration testing from user's perspective
 4. Error boundary
+5. fontaine
 
 
 ## Reusbale Components
