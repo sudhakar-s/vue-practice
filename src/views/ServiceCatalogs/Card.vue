@@ -1,128 +1,147 @@
 <template>
-  <RouterLink
-    class="text-decoration-none d-flex"
-    :to="{ name: 'service-catalog-by-id', params: { id: catalog.id } }"
-  >
-    <Card class="card d-flex flex-direction-column">
-      <!-- Header -->
-      <div class="card__status d-flex align-center justify-space-between gap-4">
-        <div class="d-flex align-center gap-3">
-          <component
-            :is="publishStatusConfig.icon"
-            :color="publishStatusConfig.iconColor"
-          /><Text
-            color="surface.text.gray.subtle"
+  <Card class="card d-flex flex-direction-column">
+    <!-- Header -->
+    <div class="card__status d-flex align-center justify-space-between gap-4">
+      <div class="d-flex align-center gap-3">
+        <component
+          :is="publishStatusConfig.icon"
+          :color="publishStatusConfig.iconColor"
+        /><Text
+          color="surface.text.gray.subtle"
+          size="xs"
+        >
+          {{ publishStatusConfig.text }}
+        </Text>
+      </div>
+      <Chip
+        v-if="totalVersions > 0"
+        variant="pill"
+      >
+        {{ totalVersions }} versions
+      </Chip>
+    </div>
+    <Text
+      class="mt-4"
+      size="large"
+      weight="semibold"
+    >
+      {{ catalog.name }}
+    </Text>
+    <Text
+      class="mt-4"
+      color="surface.text.gray.intense"
+      size="small"
+    >
+      {{ catalog.description }}
+    </Text>
+    <!-- Card Footer -->
+    <div class="mt-8 d-flex justify-space-between gap-4 flex-wrap align-end">
+      <!-- Metrics -->
+      <div v-if="mertrics !== null">
+        <div class="d-flex align-center gap-4">
+          <span class="green-dot" />
+          <Text
             size="xs"
-          >{{ publishStatusConfig.text }}</Text>
+            weight="semibold"
+          >
+            {{ mertrics.latency }}ms <Text
+              as="span"
+              color="surface.text.gray.intense"
+              size="xs"
+              weight="semibold"
+            >
+              latency
+            </Text>
+          </Text>
         </div>
-        <Chip
-          v-if="totalVersions > 0"
-          variant="pill"
-        >
-          {{ totalVersions }} versions
-        </Chip>
+        <div class="d-flex align-center gap-4 mt-2">
+          <span class="green-dot" />
+          <Text
+            size="xs"
+            weight="semibold"
+          >
+            {{ mertrics.uptime }}% <Text
+              as="span"
+              color="surface.text.gray.intense"
+              size="xs"
+              weight="semibold"
+            >
+              uptime
+            </Text>
+          </Text>
+        </div>
+        <div class="d-flex align-center">
+          <div class="d-flex align-center gap-4 mt-2">
+            <span class="green-dot" />
+            <Text
+              size="xs"
+              weight="semibold"
+            >
+              {{ mertrics.requests }} <Text
+                as="span"
+                color="surface.text.gray.intense"
+                size="xs"
+                weight="semibold"
+              >
+                requests
+              </Text>
+            </Text>
+          </div>
+          <span class="grey-dot ml-3 mr-3 mt-2" />
+          <div class="d-flex align-center gap-4 mt-2">
+            <Text
+              size="xs"
+              weight="semibold"
+            >
+              {{ mertrics.errors }}% <Text
+                as="span"
+                color="surface.text.gray.intense"
+                size="xs"
+                weight="semibold"
+              >
+                errors
+              </Text>
+            </Text>
+          </div>
+        </div>
       </div>
-      <Text
-        class="mt-4"
+      <AvatarGroup
+        v-if="avatars.length > 0"
+        class="ml-auto"
+        :max="2"
         size="large"
-        weight="semibold"
       >
-        {{ catalog.name }}
-      </Text>
-      <Text
-        class="mt-4"
-        color="surface.text.gray.intense"
-        size="small"
-      >
-        {{ catalog.description }}
-      </Text>
-      <!-- Card Footer -->
-      <div class="mt-8 d-flex justify-space-between gap-4 flex-wrap align-end">
-        <!-- Metrics -->
-        <div v-if="mertrics !== null">
-          <div class="d-flex align-center gap-4"><span class="green-dot" />
-            <Text
-              size="xs"
-              weight="semibold"
-            >{{ mertrics.latency }}ms <Text
-              as="span"
-              color="surface.text.gray.intense"
-              size="xs"
-              weight="semibold"
-            >latency</Text></Text>
-          </div>
-          <div class="d-flex align-center gap-4 mt-2"><span class="green-dot" />
-            <Text
-              size="xs"
-              weight="semibold"
-            >{{ mertrics.uptime }}% <Text
-              as="span"
-              color="surface.text.gray.intense"
-              size="xs"
-              weight="semibold"
-            >uptime</Text></Text>
-          </div>
-          <div class="d-flex align-center">
-            <div class="d-flex align-center gap-4 mt-2"><span class="green-dot" />
-              <Text
-                size="xs"
-                weight="semibold"
-              >{{ mertrics.requests }} <Text
-                as="span"
-                color="surface.text.gray.intense"
-                size="xs"
-                weight="semibold"
-              >requests</Text></Text>
-            </div>
-            <span class="grey-dot ml-3 mr-3 mt-2" />
-            <div class="d-flex align-center gap-4 mt-2">
-              <Text
-                size="xs"
-                weight="semibold"
-              >{{ mertrics.errors }}% <Text
-                as="span"
-                color="surface.text.gray.intense"
-                size="xs"
-                weight="semibold"
-              >errors</Text></Text>
-            </div>
-          </div>
-        </div>
-        <AvatarGroup
-          v-if="avatars.length > 0"
-          class="ml-auto"
-          :max="2"
-          size="large"
-        >
-          <Avatar
-            v-for="avatar in avatars"
-            :key="avatar.id"
-            :alt="avatar.name"
-            color="neutral"
-            :img-src="avatar.avatar"
-            :name="avatar.name"
-          />
-        </AvatarGroup>
-      </div>
-      <div
-        v-if="publishStatusConfig.footerText"
-        class="mt-auto d-flex align-center"
-      ><span
+        <Avatar
+          v-for="avatar in avatars"
+          :key="avatar.id"
+          :alt="avatar.name"
+          color="neutral"
+          :img-src="avatar.avatar"
+          :name="avatar.name"
+        />
+      </AvatarGroup>
+    </div>
+    <div
+      v-if="publishStatusConfig.footerText"
+      class="mt-auto d-flex align-center"
+    >
+      <span
         class="grey-dot grey-dot--large mr-3"
       /><Text
         color="surface.text.gray.intense"
         size="xs"
         weight="semibold"
-      >{{
-        publishStatusConfig.footerText
-      }}</Text></div>
-    </Card>
-  </RouterLink>
+      >
+        {{
+          publishStatusConfig.footerText
+        }}
+      </Text>
+    </div>
+  </Card>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
 import Card from '@/components/Card.vue'
 import Chip from '@/components/Chip.vue'
 import Text from '@/components/Text.vue'

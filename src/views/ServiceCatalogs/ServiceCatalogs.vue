@@ -52,11 +52,16 @@
       />
       <template v-else-if="isSuccess && !!data?.length">
         <div class="catalogs__cards">
-          <Card
+          <RouterLink
             v-for="catalog in data"
             :key="catalog.id"
-            :catalog="catalog"
-          />
+            class="text-decoration-none d-flex"
+            :to="{ name: 'service-catalog-by-id', params: { id: catalog.id } }"
+          >
+            <Card
+              :catalog="catalog"
+            />
+          </RouterLink>
         </div>
       </template>
       <Empty v-else />
@@ -66,6 +71,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import Heading from '@/components/Heading.vue'
 import Text from '@/components/Text.vue'
 import Link from '@/components/Link.vue'

@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import Text from '@/components/Text.vue'
-import Button from '@/components/Button.vue'
 import Card from '@/components/Card.vue'
 import EmptyImg from '@/assets/images/empty.svg'
 

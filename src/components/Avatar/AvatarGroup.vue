@@ -34,6 +34,7 @@ export default defineComponent({
     },
     max: {
       type: Number,
+      default: null,
     },
   },
   setup(props, { slots }) {

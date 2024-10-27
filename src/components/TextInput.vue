@@ -11,6 +11,7 @@
         v-model="model"
         :aria-label="accessibilityLabel"
         class="root__input"
+        :name
         :placeholder
       >
       <!-- TODO: icon-button  -->
@@ -42,7 +43,7 @@ const emit = defineEmits<{
   clear: []
 }>()
 
-const model = defineModel()
+const model = defineModel<string>()
 
 const handleClear = () => {
   model.value = ''

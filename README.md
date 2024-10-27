@@ -5,14 +5,15 @@
 4. Different UI State - No Data, Loading, Error, Background fetching, 404 etc.
 5. Instant navigation to details page - (thanks to vue-query)
 6. Semantic HTML and accessibility(needs some improvement)
-7. Vue 3 - setup
-8. Reusable Component
+7. Vue 3
+8. Reusable Components
 9. TS
 
 **Go to have**
 1. Animations - View Transition api(progressive enhancement)
-2. Pagination - Please check below note
-3. UT's - Integration testing from users point of view
+2. Pagination - Please refer to the below note
+3. UT's - Integration testing from user's perspective
+4. Error boundary
 
 
 ## Reusbale Components

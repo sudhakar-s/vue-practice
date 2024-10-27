@@ -38,7 +38,7 @@ export type ServiceCatalog = {
 export const useServiceCatalogs = ({ search }: { search?: MaybeRef<string> }) => {
   return useQuery({
     queryKey: ['service-catalogs', { search }],
-    queryFn: ({ }): AxiosResponse<ServiceCatalog[]> => {
+    queryFn: (): AxiosResponse<ServiceCatalog[]> => {
       return fetch.get('/api/services', {
         params: {
           q: toValue(search) || undefined,
@@ -56,7 +56,7 @@ export const useServiceCatalogsById = ({ id }: { id?: MaybeRef<string> }) => {
 
   return useQuery({
     queryKey: ['service-catalogs', { id }],
-    queryFn: async ({ }): AxiosResponse<ServiceCatalog> => {
+    queryFn: async (): AxiosResponse<ServiceCatalog> => {
       const idValue = toValue(id) || undefined
       if (!idValue) {
         return Promise.reject(new Error('No ID provided'))
