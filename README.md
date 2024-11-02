@@ -14,8 +14,9 @@
 2. Pagination - Please refer to the below note
 3. UT's - Integration testing from user's perspective
 4. Error boundary
-5. fontaine
-
+5. Fontaine
+6. Persist filter in URL
+7. Minor UI enhancements
 
 ## Reusbale Components
 I used a constrained approach(e.g., color and size props) instead of a flexible API to prevent users from customizing the design system components, which could lead to inconsistency. Please note that inherited attributes are not currently disabled.
