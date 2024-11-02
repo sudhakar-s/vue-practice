@@ -9,7 +9,7 @@
 8. Reusable Components
 9. TS
 
-**Go to have**
+**Good to have**
 1. Animations - View Transition api(progressive enhancement)
 2. Pagination - Please refer to the below note
 3. UT's - Integration testing from user's perspective
